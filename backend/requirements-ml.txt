@@ -1,0 +1,13 @@
+# Heavier dependencies for Phase 2-3 components (local damage classifier,
+# forgery CNN, LayoutLMv3 extraction, dense embeddings for pgvector RAG).
+# Kept out of requirements.txt so the default install and the Docker image
+# stay light. Install torch with the CUDA build matching your driver first:
+#   https://pytorch.org/get-started/locally/
+# then:  pip install -r requirements-ml.txt
+torch
+torchvision
+timm
+transformers
+sentence-transformers
+pgvector
+paddleocr

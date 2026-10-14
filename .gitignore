@@ -1,0 +1,47 @@
+# --- secrets / environment files (keep the template) ---
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# --- Python virtual environments and caches ---
+fin/
+backend/fin/
+venv/
+.venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Node / SvelteKit ---
+node_modules/
+**/node_modules/
+.svelte-kit/
+frontend/build/
+frontend/.vercel/
+frontend/.netlify/
+
+# --- runtime data and generated artifacts ---
+uploads/
+backend/uploads/
+backend/data/
+data/llm_cache.sqlite3
+*.sqlite3
+backend/app/ml/artifacts/*.joblib
+
+# --- logs / OS / editor ---
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# --- stray transfer files ---
+_merge_incoming.zip
+Claude outputs/
