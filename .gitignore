@@ -45,3 +45,6 @@ Thumbs.db
 # --- stray transfer files ---
 _merge_incoming.zip
 Claude outputs/
+
+# local SQLite database
+*.db

@@ -22,7 +22,16 @@ project becomes an underwriting domain pack on the same engine.
 ## Quickstart (unchanged)
 
 ```bash
-docker compose up --build
+# backend (uses a local SQLite file, no database server or Docker needed)
+cd backend
+python -m venv fin && fin\Scripts\activate      # Windows; use source fin/bin/activate elsewhere
+pip install -r requirements.txt
+uvicorn app.main:app --reload --port 8000
+
+# frontend (second terminal)
+cd frontend
+npm install
+npm run dev
 ```
 
 - API docs: http://localhost:8000/docs (now with `/underwriting/*`)
@@ -31,11 +40,6 @@ docker compose up --build
 
 Still runs with **zero keys**: the LLM gateway falls back to an offline
 mock provider when no API keys are set.
-
-> **Existing Postgres volume?** The audit log's foreign key to `claim.id`
-> was dropped so underwriting decisions can share the same chain. Either
-> `docker compose down -v` (dev data only) or run
-> `ALTER TABLE auditlogentry DROP CONSTRAINT auditlogentry_claim_id_fkey;`.
 
 ## What the merge added (Phase 1), and what's real
 
@@ -146,7 +150,16 @@ of any inconsistency found — rather than a black-box fraud verdict.
 ## Quickstart
 
 ```bash
-docker compose up --build
+# backend (uses a local SQLite file, no database server or Docker needed)
+cd backend
+python -m venv fin && fin\Scripts\activate      # Windows; use source fin/bin/activate elsewhere
+pip install -r requirements.txt
+uvicorn app.main:app --reload --port 8000
+
+# frontend (second terminal)
+cd frontend
+npm install
+npm run dev
 ```
 
 - Backend API + docs: http://localhost:8000/docs

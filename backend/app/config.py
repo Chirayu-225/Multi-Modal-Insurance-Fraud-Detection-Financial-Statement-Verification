@@ -13,7 +13,7 @@ class Settings(BaseSettings):
 
     # --- database ---
     # Async URL used by the app at runtime (asyncpg driver).
-    database_url: str = "postgresql+asyncpg://claims:claims@db:5432/claims"
+    database_url: str = "sqlite+aiosqlite:///./claims.db"
 
     # --- vision / OCR backend selection ---
     # "mock"   -> deterministic-but-randomized fake extraction, no network calls,
